@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>nteceasygo</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0" />
+</head>
+<body>
+
+  <h2>不是安卓Android或IOS無法使用 </h2>
+  </br>
+  </br>
+  <h2>Available on iOS and Android only</h2>
+
+
+<script type="text/javascript">
+
+var IS_IPAD = navigator.userAgent.match(/iPad/i) != null,
+IS_IPHONE = !IS_IPAD && ((navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null)),
+IS_IOS = IS_IPAD || IS_IPHONE,IS_ANDROID = !IS_IOS && navigator.userAgent.match(/android/i) != null,IS_MOBILE = IS_IOS || IS_ANDROID;
+
+var surl = window.document.URL.toString();
+var hospital ="test";
+var lang ="test";
+var path_link = "pwheasygoapp://hk.org.ha.pwheasygo/?hospital=";
+try{
+  hospital = surl.split("?")[1].split('=')[1].split('&')[0];
+  lang = surl.split("&")[1].split('=')[1];
+  path_link = path_link +hospital+'&lang='+lang;
+}catch(e){
+   window.alert(e);
+}
+
+if (IS_IOS) {
+window.location.replace(path_link);
+  setTimeout(function(){
+    if (!document.webkitHidden) {
+      locaiton.replace("https://apps.apple.com/us/app/id931808686");
+    }
+  },2000);
+}else if (IS_ANDROID) {
+  window.location.replace(path_link);
+  setTimeout(function(){
+    // window.alert('ANDROID');
+     locaiton.replace("https://play.google.com/store/apps/details?id=hk.org.ha.pwheasygo&hl=zh_HK");
+   }, 2000);
+
+}else{
+setTimeout(function(){
+  if (!document.webkitHidden) {
+       //window.alert('ANDROID');
+       location.replace("https://play.google.com/store/apps/details?id=hk.org.ha.pwheasygo&hl=zh_HK");
+  }
+},2000);
+
+}
+ //window.alert( path_link);
+
+</script>
+
+</body>
+</html>
